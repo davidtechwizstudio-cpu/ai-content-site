@@ -26,7 +26,7 @@ export default function PostCard({ blog, index = 0 }: { blog: BlogMeta; index?: 
   return (
     <Link href={`/blogs/${blog.slug}/`} className="card">
       <div className="thumb" style={{ background: thumbGradients[index % thumbGradients.length] }}>
-        {thumbEmoji(blog.tags)}
+        <span className="thumb-emoji">{thumbEmoji(blog.tags)}</span>
         <span className="thumb-tag">{blog.tags[0] ?? 'AI'}</span>
       </div>
       <div className="card-body">

@@ -13,6 +13,7 @@ export default function BlogsPage() {
   return (
     <div className="container">
       <div className="page-title">
+        <span className="kicker">The blog</span>
         <h1>All Blogs</h1>
         <p>{blogs.length} articles — new blogs are uploaded automatically every day.</p>
       </div>

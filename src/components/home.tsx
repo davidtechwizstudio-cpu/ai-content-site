@@ -195,6 +195,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
         <div className="container">
           <div className="section-head">
             <div>
+              <span className="kicker">Browse by goal</span>
               <h2>Popular AI Categories</h2>
               <p>Browse by what you want to do. Every category is backed by practical, hands-on articles.</p>
             </div>
@@ -220,6 +221,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
         <div className="container">
           <div className="section-head">
             <div>
+              <span className="kicker">Tested &amp; verified</span>
               <h2>Featured AI Tools</h2>
               <p>
                 {tools.length} tools tested — pricing verified against official pages, no invented
@@ -284,6 +286,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
         <div className="container">
           <div className="section-head">
             <div>
+              <span className="kicker">{results ? 'Search' : 'Fresh daily'}</span>
               <h2>{results ? `Search results for “${submitted}”` : 'Latest AI News'}</h2>
               <p>
                 {results
@@ -313,6 +316,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
           <div className="container">
             <div className="section-head">
               <div>
+                <span className="kicker">Step by step</span>
                 <h2>Latest Tutorials &amp; Guides</h2>
                 <p>Practical, step-by-step walkthroughs you can follow end to end.</p>
               </div>
@@ -335,6 +339,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
           <div className="container">
             <div className="section-head">
               <div>
+                <span className="kicker">Curated</span>
                 <h2>Editor&apos;s Picks</h2>
                 <p>Our most useful guides and comparisons to start with.</p>
               </div>
@@ -356,6 +361,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
         <div className="container">
           <div className="section-head">
             <div>
+              <span className="kicker">Automation library</span>
               <h2>AI Automation Workflows</h2>
               <p>
                 The exact pipeline this site runs on — tested end-to-end, documented and free to
@@ -396,6 +402,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
       {/* NEWSLETTER */}
       <section id="newsletter" className="container" style={{ paddingBottom: 70 }}>
         <div className="newsletter">
+          <span className="kicker news-kicker">Weekly briefing</span>
           <h2>Get the Weekly AI Briefing</h2>
           <p>
             One email a week: five practical links, one tutorial, one workflow. No hype, no selling

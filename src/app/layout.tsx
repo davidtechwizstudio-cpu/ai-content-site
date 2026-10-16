@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +26,7 @@ const navLinks = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
       <body>
         <header className="site-header">
           <div className="container nav">
@@ -97,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div className="copyright">
               © {new Date().getFullYear()} AI Insights — content auto-generated with Google Gemini,
-              published daily on Netlify.
+              published daily on Netlify &amp; GitHub Pages.
             </div>
           </div>
         </footer>
