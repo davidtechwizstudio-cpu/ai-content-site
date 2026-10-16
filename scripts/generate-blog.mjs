@@ -8,7 +8,7 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-3-flash-preview';
 const ROOT = process.cwd();
 const TOPICS_FILE = path.join(ROOT, 'content', 'topics.txt');
 const BLOGS_DIR = path.join(ROOT, 'content', 'blogs');
@@ -45,7 +45,7 @@ tags: [tag1, tag2, tag3]
 - Do not mention that you are an AI.`;
 }
 
-async function generate(topic) {
+async function generateOnce(topic) {
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`,
     {
@@ -59,12 +59,32 @@ async function generate(topic) {
   );
 
   if (!res.ok) {
-    throw new Error(`Gemini API error ${res.status}: ${await res.text()}`);
+    const errText = await res.text();
+    throw Object.assign(new Error(`Gemini API error ${res.status}: ${errText}`), { status: res.status });
   }
 
   const data = await res.json();
   let text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') ?? '';
   if (!text.trim()) throw new Error('Gemini se empty response mila.');
+  return text;
+}
+
+async function generate(topic) {
+  let lastErr;
+  let text;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    try {
+      text = await generateOnce(topic);
+      break;
+    } catch (err) {
+      lastErr = err;
+      const retryable = err.status === 429 || err.status === 503 || err.status === 500 || !err.status;
+      if (!retryable || attempt === 4) break;
+      console.warn(`Attempt ${attempt} failed (${err.status || 'network'}), retrying in ${attempt * 5}s...`);
+      await new Promise((r) => setTimeout(r, attempt * 5000));
+    }
+  }
+  if (!text) throw lastErr;
 
   text = text.trim().replace(/^```(?:markdown|md)?\s*/i, '').replace(/\s*```$/, '').trim();
 
