@@ -335,49 +335,64 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
       {/* NEWSLETTER */}
       <section id="newsletter" className="container" style={{ paddingBottom: 70 }}>
         <div className="newsletter">
-          <span className="kicker news-kicker">Weekly briefing</span>
-          <h2>Get the Weekly AI Briefing</h2>
-          <p>
-            One email a week: five practical links, one tutorial, one workflow. No hype, no selling
-            your data. Unsubscribe anytime.
-          </p>
-          {subscribed ? (
-            <p className="news-success">✓ You&apos;re subscribed — check your inbox to confirm.</p>
-          ) : (
-            <form
-              className="news-form"
-              name="newsletter"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              onSubmit={subscribe}
-            >
-              <input type="hidden" name="form-name" value="newsletter" />
-              <p className="visually-hidden">
-                <label>
-                  Do not fill this out: <input name="bot-field" />
+          <div className="news-copy">
+            <span className="kicker news-kicker">Weekly briefing</span>
+            <h2>Get the Weekly AI Briefing</h2>
+            <p>
+              One email a week with the most useful AI links, tutorials and workflows. No hype, no
+              spam, no selling your data.
+            </p>
+            <ul className="news-points">
+              <li>Five practical AI links, hand-picked</li>
+              <li>One step-by-step tutorial</li>
+              <li>One automation workflow you can copy</li>
+            </ul>
+          </div>
+          <div className="news-panel">
+            {subscribed ? (
+              <p className="news-success">✓ You&apos;re subscribed — check your inbox to confirm.</p>
+            ) : (
+              <>
+                <form
+                  className="news-form"
+                  name="newsletter"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  onSubmit={subscribe}
+                >
+                  <input type="hidden" name="form-name" value="newsletter" />
+                  <p className="visually-hidden">
+                    <label>
+                      Do not fill this out: <input name="bot-field" />
+                    </label>
+                  </p>
+                  <input
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    aria-label="Email address"
+                  />
+                  <button className="btn-blue" type="submit">
+                    Subscribe
+                  </button>
+                </form>
+                <label className="news-note">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                  />
+                  <span>
+                    Send me the weekly briefing. See <a href="#privacy">Privacy Policy</a>.
+                  </span>
                 </label>
-              </p>
-              <input
-                type="email"
-                required
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                aria-label="Email address"
-              />
-              <button className="btn-blue" type="submit">
-                Subscribe
-              </button>
-            </form>
-          )}
-          <label className="news-note">
-            <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
-            <span>
-              Send me the weekly briefing as selected. See <a href="#privacy">Privacy Policy</a>.
-              Consent is required — unsubscribe any time in one click.
-            </span>
-          </label>
+                <p className="news-fine">No spam · One-click unsubscribe · Cancel anytime</p>
+              </>
+            )}
+          </div>
         </div>
       </section>
     </>
