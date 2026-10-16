@@ -20,9 +20,9 @@ const tools = [
 ];
 
 const steps = [
-  { n: '01', title: 'Gemini Article Generate Karta Hai', desc: 'Roz scheduled job ek AI topic pick karta hai aur 1200+ word SEO-optimized markdown article banata hai.' },
-  { n: '02', title: 'GitHub Auto-Commit Karta Hai', desc: 'GitHub Actions naya blog repo me commit kar deta hai — koi manual upload nahi.' },
-  { n: '03', title: 'Netlify Live Kar Deta Hai', desc: 'Push hote hi Netlify build karke site CDN par deploy kar deta hai — few seconds me.' },
+  { n: '01', title: 'Gemini Generates the Article', desc: 'A scheduled job picks an AI topic and writes a 1200+ word SEO-optimized markdown article every day.' },
+  { n: '02', title: 'GitHub Auto-Commits', desc: 'GitHub Actions commits the new blog straight to the repository — no manual uploads at all.' },
+  { n: '03', title: 'Netlify Publishes It', desc: 'On every push, Netlify builds the site and deploys it to the global CDN — live in seconds.' },
 ];
 
 export default function Home() {
@@ -44,8 +44,8 @@ export default function Home() {
           Your Daily Dose of <em>AI Knowledge</em>
         </h1>
         <p>
-          LLMs, agents, generative tools aur automation workflows par practical articles —
-          Google Gemini se auto-generated, Netlify par auto-deployed.
+          Practical articles on LLMs, agents, generative tools and automation workflows —
+          auto-generated with Google Gemini and auto-deployed on Netlify.
         </p>
         <div>
           <Link href="/blogs/" className="btn">
@@ -83,7 +83,7 @@ export default function Home() {
       <section className="section container">
         <h2 className="section-title">Latest Articles</h2>
         {blogs.length === 0 ? (
-          <p className="empty">Abhi koi article nahi. Pehla blog generate karne ke liye run: npm run generate:blog</p>
+          <p className="empty">No articles yet. Generate the first blog by running: npm run generate:blog</p>
         ) : (
           <div className="grid">
             {blogs.map((b) => (
@@ -138,24 +138,24 @@ export default function Home() {
           <div className="feature">
             <div className="icon">🤖</div>
             <h3>AI Generated</h3>
-            <p>Har article Google Gemini API se SEO-optimized markdown me auto-generate hota hai.</p>
+            <p>Every article is auto-generated as SEO-optimized markdown using the Google Gemini API.</p>
           </div>
           <div className="feature">
             <div className="icon">⏰</div>
             <h3>Scheduled Uploads</h3>
-            <p>GitHub Actions roz schedule par naya blog repo me commit karti hai — zero manual kaam.</p>
+            <p>A GitHub Actions cron job commits a fresh blog every day — zero manual work.</p>
           </div>
           <div className="feature">
             <div className="icon">🚀</div>
             <h3>Netlify Deploy</h3>
-            <p>Push hote hi Netlify build karke site free CDN par live kar deta hai.</p>
+            <p>Every push triggers a Netlify build and puts the site live on the free global CDN.</p>
           </div>
         </div>
       </section>
 
       <section className="container cta">
-        <h2>Naye AI Articles Roz Automatic</h2>
-        <p>Har din ek naya AI topic — bina kisi manual effort ke seedha aapke saamne.</p>
+        <h2>Fresh AI Articles, Every Single Day</h2>
+        <p>A brand new AI topic every day — published automatically, no manual effort required.</p>
         <div>
           <Link href="/blogs/" className="btn">
             Explore All Blogs

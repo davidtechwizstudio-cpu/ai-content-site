@@ -14,11 +14,11 @@ export default function BlogsPage() {
     <div className="container">
       <div className="page-title">
         <h1>All Blogs</h1>
-        <p>{blogs.length} articles — roz automatic naye blogs upload hote hain.</p>
+        <p>{blogs.length} articles — new blogs are uploaded automatically every day.</p>
       </div>
       <section className="section">
         {blogs.length === 0 ? (
-          <p className="empty">Koi blog nahi mila.</p>
+          <p className="empty">No blogs found.</p>
         ) : (
           <div className="grid">
             {blogs.map((b) => (
