@@ -40,30 +40,6 @@ const tools: Tool[] = [
   { name: 'Midjourney', letter: 'M', color: '#8b5cf6', desc: 'High-quality artistic image generation with fine style control.', cat: 'AI Image Generation', pricing: 'Paid', url: 'https://www.midjourney.com' },
 ];
 
-const workflows = [
-  {
-    status: 'Tested', level: 'Beginner', time: '5 min',
-    title: 'Daily AI Article Generation',
-    desc: 'Scheduled job picks the next topic from the queue and writes a 1200+ word SEO article with Gemini.',
-    needs: 'Gemini API · Node.js · GitHub Actions',
-    url: 'https://github.com/davidtechwizstudio-cpu/ai-content-site/actions',
-  },
-  {
-    status: 'Tested', level: 'Intermediate', time: '2 min',
-    title: 'Auto Git Commit Pipeline',
-    desc: 'New markdown files are committed and pushed by a bot, keeping the content repository always current.',
-    needs: 'GitHub Actions · git · bot commits',
-    url: 'https://github.com/davidtechwizstudio-cpu/ai-content-site/commits/main',
-  },
-  {
-    status: 'Tested', level: 'Intermediate', time: '3 min',
-    title: 'Instant Netlify Deploy',
-    desc: 'Every push builds the static export and ships it to the global CDN — live within a minute.',
-    needs: 'Netlify CLI · static export · CDN',
-    url: 'https://app.netlify.com/projects/ai-content-site/deploys',
-  },
-];
-
 export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
   const [query, setQuery] = useState('');
   const [submitted, setSubmitted] = useState('');
@@ -355,49 +331,6 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
           </div>
         </section>
       )}
-
-      {/* WORKFLOWS */}
-      <section id="workflows" className="band">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <span className="kicker">Automation library</span>
-              <h2>AI Automation Workflows</h2>
-              <p>
-                The exact pipeline this site runs on — tested end-to-end, documented and free to
-                reuse.
-              </p>
-            </div>
-            <a
-              href="https://github.com/davidtechwizstudio-cpu/ai-content-site"
-              className="link-more"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Workflow library →
-            </a>
-          </div>
-          <div className="workflows">
-            {workflows.map((w) => (
-              <div key={w.title} className="wf">
-                <div className="wf-badges">
-                  <span className="badge tested">✔ {w.status}</span>
-                  <span className="badge level">{w.level}</span>
-                  <span className="badge time">⏱ {w.time}</span>
-                </div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
-                <div className="needs">
-                  <strong>Needs:</strong> {w.needs}
-                </div>
-                <a href={w.url} target="_blank" rel="noreferrer" className="read-more">
-                  View Workflow →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* NEWSLETTER */}
       <section id="newsletter" className="container" style={{ paddingBottom: 70 }}>

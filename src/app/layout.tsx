@@ -20,7 +20,6 @@ const navLinks = [
   { href: '/#categories', label: 'AI Categories' },
   { href: '/#tools', label: 'AI Tools' },
   { href: '/#articles', label: 'Articles' },
-  { href: '/#workflows', label: 'Workflows' },
   { href: '/blogs/', label: 'Blog' },
 ];
 
@@ -76,7 +75,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/#tools">AI Tools Directory</Link>
                 <Link href="/#articles">Latest Articles</Link>
                 <Link href="/blogs/">All Blogs</Link>
-                <Link href="/#workflows">Automation Library</Link>
                 <Link href="/#categories">Categories</Link>
               </div>
               <div className="footer-col">
