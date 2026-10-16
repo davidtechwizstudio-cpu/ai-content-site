@@ -9,3 +9,10 @@ next-env.d.ts
 
 dev.log
 dev.err
+
+# Local Netlify folder
+.netlify
+
+.answers.txt
+.agents/
+.netlify/
