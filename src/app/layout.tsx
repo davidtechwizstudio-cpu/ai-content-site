@@ -4,12 +4,21 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'AI Insights — AI Content Hub',
+    default: 'AI Insights — Discover the Power of Artificial Intelligence',
     template: '%s | AI Insights',
   },
   description:
-    'Daily AI articles, guides, tools and workflows — automatically generated and published.',
+    'Explore the latest AI tools, practical tutorials, automation workflows, and expert guides to work smarter with AI.',
 };
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/#categories', label: 'AI Categories' },
+  { href: '/#tools', label: 'AI Tools' },
+  { href: '/#articles', label: 'Articles' },
+  { href: '/#workflows', label: 'Workflows' },
+  { href: '/blogs/', label: 'Blog' },
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,21 +27,78 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="container nav">
             <Link href="/" className="logo">
-              AI<span>Insights</span>
+              <span className="logo-mark">AI</span>
+              AI Insights
             </Link>
-            <nav>
-              <Link href="/">Home</Link>
-              <Link href="/blogs/">Blogs</Link>
-              <a href="https://github.com" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
+            <nav className="nav-links">
+              {navLinks.map((l) => (
+                <Link key={l.label} href={l.href}>
+                  {l.label}
+                </Link>
+              ))}
             </nav>
+            <Link href="/blogs/" className="nav-cta">
+              Browse Blogs →
+            </Link>
           </div>
         </header>
         <main>{children}</main>
         <footer className="site-footer">
           <div className="container">
-            <p>© {new Date().getFullYear()} AI Insights — Content auto-generated with Gemini &amp; deployed on Netlify.</p>
+            <div className="footer-grid">
+              <div className="footer-brand">
+                <Link href="/" className="logo">
+                  <span className="logo-mark">AI</span>
+                  AI Insights
+                </Link>
+                <p>
+                  A practical, regularly updated hub for AI tools, tutorials, and automation
+                  workflows — every article auto-generated with Gemini and verified by our pipeline.
+                </p>
+                <div className="socials">
+                  <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer" title="GitHub">
+                    ⎇
+                  </a>
+                  <a href="mailto:hello@aiinsights.example" title="Email">
+                    ✉
+                  </a>
+                  <a href="/blogs/" title="Blog">
+                    📝
+                  </a>
+                </div>
+              </div>
+              <div className="footer-col">
+                <h4>Explore</h4>
+                <Link href="/#tools">AI Tools Directory</Link>
+                <Link href="/#articles">Latest Articles</Link>
+                <Link href="/blogs/">All Blogs</Link>
+                <Link href="/#workflows">Automation Library</Link>
+                <Link href="/#categories">Categories</Link>
+              </div>
+              <div className="footer-col">
+                <h4>Popular Categories</h4>
+                <Link href="/#categories">AI Writing</Link>
+                <Link href="/#categories">AI Coding</Link>
+                <Link href="/#categories">AI Chatbots</Link>
+                <Link href="/#categories">AI Automation</Link>
+                <Link href="/#categories">AI Research</Link>
+              </div>
+              <div className="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <a href="mailto:hello@aiinsights.example">Contact</a>
+                <Link href="/#newsletter">Newsletter</Link>
+                <a href="https://app.netlify.com/projects/ai-content-site" target="_blank" rel="noreferrer">
+                  Hosting Status
+                </a>
+                <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div className="copyright">
+              © {new Date().getFullYear()} AI Insights — content auto-generated with Google Gemini,
+              published daily on Netlify.
+            </div>
           </div>
         </footer>
       </body>
