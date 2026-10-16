@@ -26,17 +26,17 @@ interface Tool {
   color: string;
   desc: string;
   cat: string;
-  pricing: 'Free' | 'Freemium' | 'Paid';
+  pricing: 'Free' | 'Premium' | 'Paid';
   featured?: boolean;
   url: string;
 }
 
 const tools: Tool[] = [
-  { name: 'Claude', letter: 'C', color: '#d97757', desc: 'Thoughtful long-form writing, document analysis and careful coding.', cat: 'AI Chatbots', pricing: 'Freemium', featured: true, url: 'https://claude.ai' },
-  { name: 'ChatGPT', letter: 'G', color: '#10a37f', desc: 'The everyday assistant for writing, research, analysis and code.', cat: 'AI Chatbots', pricing: 'Freemium', featured: true, url: 'https://chatgpt.com' },
+  { name: 'Claude', letter: 'C', color: '#d97757', desc: 'Thoughtful long-form writing, document analysis and careful coding.', cat: 'AI Chatbots', pricing: 'Premium', featured: true, url: 'https://claude.ai' },
+  { name: 'ChatGPT', letter: 'G', color: '#10a37f', desc: 'The everyday assistant for writing, research, analysis and code.', cat: 'AI Chatbots', pricing: 'Premium', featured: true, url: 'https://chatgpt.com' },
   { name: 'Gemini', letter: 'G', color: '#4285f4', desc: 'Multimodal assistant deeply integrated with Google services.', cat: 'AI Productivity', pricing: 'Free', url: 'https://gemini.google.com' },
-  { name: 'Perplexity', letter: 'P', color: '#20808d', desc: 'Ask questions and get answers with source citations to verify.', cat: 'AI Research', pricing: 'Freemium', url: 'https://www.perplexity.ai' },
-  { name: 'n8n', letter: 'n', color: '#ea4b71', desc: 'Visual workflow automation you can self-host for free.', cat: 'AI Automation', pricing: 'Freemium', featured: true, url: 'https://n8n.io' },
+  { name: 'Perplexity', letter: 'P', color: '#20808d', desc: 'Ask questions and get answers with source citations to verify.', cat: 'AI Research', pricing: 'Premium', url: 'https://www.perplexity.ai' },
+  { name: 'n8n', letter: 'n', color: '#ea4b71', desc: 'Visual workflow automation you can self-host for free.', cat: 'AI Automation', pricing: 'Premium', featured: true, url: 'https://n8n.io' },
   { name: 'Midjourney', letter: 'M', color: '#8b5cf6', desc: 'High-quality artistic image generation with fine style control.', cat: 'AI Image Generation', pricing: 'Paid', url: 'https://www.midjourney.com' },
 ];
 
@@ -67,7 +67,7 @@ const workflows = [
 export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
   const [query, setQuery] = useState('');
   const [submitted, setSubmitted] = useState('');
-  const [pricing, setPricing] = useState<'All' | 'Free' | 'Freemium' | 'Paid'>('All');
+  const [pricing, setPricing] = useState<'All' | 'Free' | 'Premium' | 'Paid'>('All');
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
@@ -232,7 +232,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
           </div>
           <div className="filter-row">
             <div className="pills">
-              {(['All', 'Free', 'Freemium', 'Paid'] as const).map((p) => (
+              {(['All', 'Free', 'Premium', 'Paid'] as const).map((p) => (
                 <button
                   key={p}
                   className={`pill ${pricing === p ? 'active' : ''}`}
