@@ -45,6 +45,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Netlify
+        continue-on-error: true
         run: npx --yes netlify-cli@latest deploy --prod --dir out --no-build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
