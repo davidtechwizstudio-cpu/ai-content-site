@@ -120,7 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="footer-bottom">
               <span>© {new Date().getFullYear()} AI Insights</span>
               <span className="footer-meta">
-                English content · Generated with Gemini · Hosted on GitHub Pages
+                All rights reserved
               </span>
               <a href="#" className="to-top">
                 Back to top ↑
