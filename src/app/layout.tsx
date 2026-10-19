@@ -5,11 +5,14 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
-const clash = localFont([
-  { src: '../fonts/ClashDisplay-600.woff2', weight: '600', style: 'normal', display: 'swap' },
-  { src: '../fonts/ClashDisplay-700.woff2', weight: '700', style: 'normal', display: 'swap' },
-], { variable: '--font-display' });
-
+const clash = localFont({
+  src: [
+    { path: '../fonts/ClashDisplay-600.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/ClashDisplay-700.woff2', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-display',
+});
 export const metadata: Metadata = {
   title: {
     default: 'AI Insights — Discover the Power of Artificial Intelligence',
