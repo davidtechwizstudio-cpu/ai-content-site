@@ -150,8 +150,12 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
             </g>
           </svg>
           <div className="float-card">
-            <span>Featured walkthrough</span>
-            <strong>Gemini + GitHub Actions + Netlify daily publishing</strong>
+            <p>
+              Explore our featured AI walkthroughs to discover how ChatGPT, Claude, and other AI
+              tools can simplify your workflow. Follow step-by-step guides, learn practical
+              techniques, and unlock the power of artificial intelligence for content creation,
+              coding, research, and productivity.
+            </p>
           </div>
         </div>
       </section>
