@@ -267,13 +267,33 @@
 .cx-quiz-restart:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Pros & cons */
-.cx-pc { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.cx-pc { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cx-pc > div {
+  border-radius: 14px; padding: 18px 18px 20px;
+  border: 1px solid;
+}
+.cx-pc > div:first-child { background: #f6fef9; border-color: #d3f5e0; }
+.cx-pc > div:last-child { background: #fff8f7; border-color: #fde2dd; }
 .cx-good-h { color: var(--green); }
 .cx-bad-h { color: #dc2626; }
 .cx-pc h4 {
   font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  margin-bottom: 10px; font-family: var(--font-sans), sans-serif;
+  margin-bottom: 12px; font-family: var(--font-sans), sans-serif;
+  display: flex; align-items: center; gap: 7px;
 }
+.cx-pc h4::before {
+  content: ''; width: 8px; height: 8px; border-radius: 3px;
+}
+.cx-good-h::before { background: var(--green); }
+.cx-bad-h::before { background: #dc2626; }
+.cx-pc ul { list-style: none; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.cx-pc li {
+  position: relative; padding-left: 26px;
+  font-size: 14.5px; color: #475569; line-height: 1.55;
+}
+.cx-pc li::before { position: absolute; left: 0; top: 0; font-weight: 800; font-size: 13px; }
+.cx-pc .cx-good li::before { content: '✓'; color: var(--green); }
+.cx-pc .cx-bad li::before { content: '✕'; color: #dc2626; }
 
 /* FAQ */
 .cx-faq-wrap { max-width: 780px; }
