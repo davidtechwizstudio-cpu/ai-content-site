@@ -91,7 +91,8 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
   return (
     <>
       {/* HERO */}
-      <section className="container hero">
+      <section className="hero-band">
+      <div className="container hero">
         <div>
           <div className="eyebrow">Regularly updated · No marketplace</div>
           <h1>
@@ -153,6 +154,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
             <p>Discover the future of AI! 🤖</p>
           </div>
         </div>
+      </div>
       </section>
 
       {/* STATS */}
