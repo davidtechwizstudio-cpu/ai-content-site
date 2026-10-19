@@ -150,12 +150,7 @@ export default function HomeClient({ blogs }: { blogs: BlogMeta[] }) {
             </g>
           </svg>
           <div className="float-card">
-            <p>
-              Explore our featured AI walkthroughs to discover how ChatGPT, Claude, and other AI
-              tools can simplify your workflow. Follow step-by-step guides, learn practical
-              techniques, and unlock the power of artificial intelligence for content creation,
-              coding, research, and productivity.
-            </p>
+            <p>Discover the future of AI! 🤖</p>
           </div>
         </div>
       </section>
