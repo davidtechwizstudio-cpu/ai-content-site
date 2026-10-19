@@ -102,27 +102,35 @@ export default function ComparisonPage() {
   return (
     <div className="cx-page">
       {/* HERO */}
-      <section className="cx-hero container">
-        <span className="kicker">Complete AI comparison 2026</span>
-        <h1>
-          ChatGPT vs Claude: Which AI Is <em>Better in 2026?</em>
-        </h1>
-        <p>
-          Compare ChatGPT and Claude for coding, blogging, SEO, research, image generation, and
-          productivity — side by side, no hype.
-        </p>
-        <div className="cx-hero-actions">
-          <a className="btn-blue" href="https://chatgpt.com/" target="_blank" rel="noreferrer">
-            Explore ChatGPT ↗
-          </a>
-          <a className="btn" href="https://claude.ai/" target="_blank" rel="noreferrer">
-            Explore Claude ↗
-          </a>
-        </div>
-        <div className="cx-hero-vs">
-          <span className="cx-vs-badge cx-gpt">GPT</span>
-          <span className="cx-vs-mark">vs</span>
-          <span className="cx-vs-badge cx-claude">CL</span>
+      <section className="cx-hero-band">
+        <div className="container cx-hero">
+          <span className="kicker">Complete AI comparison 2026</span>
+          <h1>
+            ChatGPT vs Claude: Which AI Is <em>Better in 2026?</em>
+          </h1>
+          <p>
+            Compare ChatGPT and Claude for coding, blogging, SEO, research, image generation, and
+            productivity — side by side, no hype.
+          </p>
+          <div className="cx-hero-actions">
+            <a className="btn-blue" href="https://chatgpt.com/" target="_blank" rel="noreferrer">
+              Explore ChatGPT ↗
+            </a>
+            <a className="btn" href="https://claude.ai/" target="_blank" rel="noreferrer">
+              Explore Claude ↗
+            </a>
+          </div>
+          <div className="cx-vs">
+            <div className="cx-vs-side cx-vs-gpt">
+              <span className="cx-vs-badge cx-gpt">GPT</span>
+              <span className="cx-vs-name">ChatGPT</span>
+            </div>
+            <div className="cx-vs-core"><span>VS</span></div>
+            <div className="cx-vs-side cx-vs-claude">
+              <span className="cx-vs-badge cx-claude">CL</span>
+              <span className="cx-vs-name">Claude</span>
+            </div>
+          </div>
         </div>
       </section>
 
