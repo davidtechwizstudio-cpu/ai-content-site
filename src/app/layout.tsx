@@ -55,18 +55,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <footer className="site-footer">
           <div className="container">
-            <div className="footer-grid">
+            <div className="footer-top">
               <div className="footer-brand">
                 <Link href="/" className="logo">
                   <span className="logo-mark">AI</span>
                   AI Insights
                 </Link>
                 <p>
-                  A practical, regularly updated hub for AI tools, tutorials, and automation
-                  workflows — every article auto-generated with Gemini and verified by our pipeline.
+                  Practical AI tools, tutorials and automation guides — published daily, generated
+                  with Gemini, fully open source.
                 </p>
+                <div className="footer-status">
+                  <span className="status-dot" /> Live · new article every day
+                </div>
                 <div className="socials">
-                  <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer" title="GitHub">
+                  <a
+                    href="https://github.com/davidtechwizstudio-cpu/ai-content-site"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="GitHub"
+                  >
                     ⎇
                   </a>
                   <a href="mailto:hello@aiinsights.example" title="Email">
@@ -77,36 +85,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </a>
                 </div>
               </div>
-              <div className="footer-col">
-                <h4>Explore</h4>
-                <Link href="/#tools">AI Tools Directory</Link>
-                <Link href="/#articles">Latest Articles</Link>
-                <Link href="/blogs/">All Blogs</Link>
-                <Link href="/#categories">Categories</Link>
-              </div>
-              <div className="footer-col">
-                <h4>Popular Categories</h4>
-                <Link href="/#categories">AI Writing</Link>
-                <Link href="/#categories">AI Coding</Link>
-                <Link href="/#categories">AI Chatbots</Link>
-                <Link href="/#categories">AI Automation</Link>
-                <Link href="/#categories">AI Research</Link>
-              </div>
-              <div className="footer-col">
-                <h4>Company &amp; Legal</h4>
-                <a href="mailto:hello@aiinsights.example">Contact</a>
-                <Link href="/#newsletter">Newsletter</Link>
-                <a href="https://app.netlify.com/projects/ai-content-site" target="_blank" rel="noreferrer">
-                  Hosting Status
-                </a>
-                <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer">
-                  Source Code
-                </a>
+
+              <div className="footer-cols">
+                <div className="footer-col">
+                  <h4>Explore</h4>
+                  <Link href="/#tools">AI Tools Directory</Link>
+                  <Link href="/#articles">Latest Articles</Link>
+                  <Link href="/blogs/">All Blogs</Link>
+                  <Link href="/#categories">Categories</Link>
+                </div>
+                <div className="footer-col">
+                  <h4>Popular Categories</h4>
+                  <Link href="/#categories">AI Writing</Link>
+                  <Link href="/#categories">AI Coding</Link>
+                  <Link href="/#categories">AI Chatbots</Link>
+                  <Link href="/#categories">AI Automation</Link>
+                  <Link href="/#categories">AI Research</Link>
+                </div>
+                <div className="footer-col">
+                  <h4>Company &amp; Legal</h4>
+                  <a href="mailto:hello@aiinsights.example">Contact</a>
+                  <Link href="/#newsletter">Newsletter</Link>
+                  <a href="https://app.netlify.com/projects/ai-content-site" target="_blank" rel="noreferrer">
+                    Hosting Status
+                  </a>
+                  <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer">
+                    Source Code
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="copyright">
-              © {new Date().getFullYear()} AI Insights — content auto-generated with Google Gemini,
-              published daily on Netlify &amp; GitHub Pages.
+
+            <div className="footer-bottom">
+              <span>© {new Date().getFullYear()} AI Insights</span>
+              <span className="footer-meta">
+                English content · Generated with Gemini · Hosted on GitHub Pages
+              </span>
+              <a href="#" className="to-top">
+                Back to top ↑
+              </a>
             </div>
           </div>
         </footer>
