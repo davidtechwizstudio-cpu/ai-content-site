@@ -27,6 +27,7 @@ const navLinks = [
   { href: '/#categories', label: 'AI Categories' },
   { href: '/#tools', label: 'AI Tools' },
   { href: '/#articles', label: 'Articles' },
+  { href: '/comparison/', label: 'Comparison' },
   { href: '/blogs/', label: 'Blog' },
 ];
 
