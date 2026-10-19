@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { BlogMeta } from '@/lib/blogs';
 
-const thumbGradients = [
+export const thumbGradients = [
   'linear-gradient(135deg, #dbeafe, #bfdbfe)',
   'linear-gradient(135deg, #ede9fe, #ddd6fe)',
   'linear-gradient(135deg, #dcfce7, #bbf7d0)',
@@ -10,7 +10,7 @@ const thumbGradients = [
   'linear-gradient(135deg, #e0f2fe, #bae6fd)',
 ];
 
-function thumbEmoji(tags: string[]): string {
+export function thumbEmoji(tags: string[]): string {
   const t = tags.join(' ').toLowerCase();
   if (t.includes('agent') || t.includes('automation')) return '⚙️';
   if (t.includes('image') || t.includes('generative')) return '🎨';
