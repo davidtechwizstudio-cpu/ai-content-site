@@ -42,7 +42,7 @@ body::before {
     radial-gradient(560px 300px at 88% -40px, rgba(56, 189, 248, 0.07), transparent 70%);
 }
 
-h1, h2, h3, h4 { font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif; font-weight: 800; }
+h1, h2, h3, h4 { font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif; font-weight: 700; }
 
 ::selection { background: rgba(37, 99, 235, 0.18); }
 
@@ -149,7 +149,7 @@ img { max-width: 100%; }
 }
 .hero h1 {
   font-size: clamp(38px, 5vw, 58px); line-height: 1.06; letter-spacing: -2.2px;
-  font-weight: 850;
+  font-weight: 700;
 }
 .hero h1 em {
   font-style: normal;
@@ -226,7 +226,7 @@ img { max-width: 100%; }
   background: var(--grad-brand);
 }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
-.section-head h2 { font-size: clamp(25px, 3vw, 33px); letter-spacing: -1.1px; line-height: 1.18; font-weight: 800; }
+.section-head h2 { font-size: clamp(25px, 3vw, 33px); letter-spacing: -1.1px; line-height: 1.18; font-weight: 700; }
 .section-head p { color: var(--muted); font-size: 14.5px; margin-top: 8px; max-width: 660px; }
 .link-more {
   color: var(--accent); font-size: 14px; font-weight: 700; white-space: nowrap;
@@ -478,7 +478,7 @@ img { max-width: 100%; }
 /* ---------- Page / listing ---------- */
 .page-title { padding: 60px 0 8px; }
 .page-title .kicker { margin-bottom: 12px; }
-.page-title h1 { font-size: clamp(32px, 4vw, 46px); letter-spacing: -1.4px; font-weight: 850; }
+.page-title h1 { font-size: clamp(32px, 4vw, 46px); letter-spacing: -1.4px; font-weight: 700; }
 .page-title p { color: var(--muted); margin-top: 10px; font-size: 16px; }
 
 /* ---------- Article ---------- */
@@ -522,7 +522,7 @@ img { max-width: 100%; }
 .article .back:hover { color: var(--accent); transform: translateX(-3px); }
 .article-head h1 {
   font-size: clamp(32px, 4.6vw, 48px); line-height: 1.08;
-  letter-spacing: -1.7px; margin: 10px 0 0; font-weight: 850;
+  letter-spacing: -1.7px; margin: 10px 0 0; font-weight: 700;
   max-width: 800px;
 }
 .article-lead {
@@ -558,7 +558,7 @@ img { max-width: 100%; }
   position: relative;
   font-size: 30px; line-height: 1.2;
   color: var(--text); margin: 52px 0 16px;
-  letter-spacing: -0.9px; font-weight: 850;
+  letter-spacing: -0.9px; font-weight: 700;
 }
 .article-body h2::before {
   content: counter(sec, decimal-leading-zero);
@@ -574,7 +574,7 @@ img { max-width: 100%; }
 }
 .article-body h3 {
   font-size: 21px; color: var(--text); margin: 34px 0 10px;
-  letter-spacing: -0.5px; font-weight: 750;
+  letter-spacing: -0.5px; font-weight: 600;
   display: table; border-bottom: 2px solid rgba(37, 99, 235, 0.18);
   padding-bottom: 6px;
 }

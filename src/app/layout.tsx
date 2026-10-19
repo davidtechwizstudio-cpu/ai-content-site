@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
+const clash = localFont([
+  { src: '../fonts/ClashDisplay-600.woff2', weight: '600', style: 'normal', display: 'swap' },
+  { src: '../fonts/ClashDisplay-700.woff2', weight: '700', style: 'normal', display: 'swap' },
+], { variable: '--font-display' });
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +29,7 @@ const navLinks = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${inter.variable} ${clash.variable}`}>
       <body>
         <header className="site-header">
           <div className="container nav">
