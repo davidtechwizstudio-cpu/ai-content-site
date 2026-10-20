@@ -108,12 +108,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <h4>Company &amp; Legal</h4>
                   <a href="mailto:hello@aiinsights.example">Contact</a>
                   <Link href="/#newsletter">Newsletter</Link>
-                  <a href="https://app.netlify.com/projects/ai-content-site" target="_blank" rel="noreferrer">
-                    Hosting Status
-                  </a>
-                  <a href="https://github.com/davidtechwizstudio-cpu/ai-content-site" target="_blank" rel="noreferrer">
-                    Source Code
-                  </a>
                 </div>
               </div>
             </div>
