@@ -2,7 +2,7 @@ name: Generate AI Blog & Deploy
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 4,8,12,16,20 * * *'
   workflow_dispatch:
 
 permissions:
