@@ -63,8 +63,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   AI Insights
                 </Link>
                 <p>
-                  Practical AI tools, tutorials and automation guides — published daily, generated
-                  with Gemini, fully open source.
+                  AI is the ability of a digital computer or robot to perform tasks that typically
+                  require human intelligence, such as reasoning, learning, decision-making, and
+                  problem-solving.
                 </p>
                 <div className="footer-status">
                   <span className="status-dot" /> Live · new article every day
