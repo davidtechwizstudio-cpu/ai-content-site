@@ -92,3 +92,11 @@ AI in Supply Chain Management: Predictive Analytics for Inventory
 Mastering Prompt Engineering for Data Analysis in Excel
 The Best AI Video Generators for Marketing Teams in 2024
 Automating Social Media Content
+
+DeepSeek-V3 vs Claude 3.5 Sonnet for Full-Stack Development
+Integrating LangChain with FastAPI for Real-Time AI Applications
+Automated Unit Testing with CodiumAI and Tabnine
+Building a Voice-Controlled Home Automation System with Whisper
+AI-Powered CRM Systems for Small Business Growth
+Automating Email Triage with Zapier and OpenAI
+AI Meeting Assistants Compared: Otter
